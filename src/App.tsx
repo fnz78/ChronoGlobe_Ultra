@@ -1,6 +1,7 @@
 import { useState, useEffect, useMemo } from 'react';
 import { Moon, Sun, Globe, Clock, Calendar, Bell, BellOff, X, Plus, Trash2, Search, Settings, Sunrise, Sunset } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
+import { Analytics } from '@vercel/analytics/react';
 import { useWorldTime } from './hooks/useWorldTime';
 import { TimezoneSelector } from './components/TimezoneSelector';
 import { MultiClockPanel } from './components/MultiClockPanel';
@@ -206,6 +207,7 @@ export default function App() {
           <span>{selectedTimezone === 'local' ? 'System Sync' : 'Network Sync'}</span>
         </div>
       </motion.div>
+      <Analytics />
     </div>
   );
 }
